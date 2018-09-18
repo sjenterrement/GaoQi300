@@ -22,7 +22,7 @@ public class TestWrappedClass {
 		
 		System.out.println("##################");
 		
-		Integer s1=100;
+		Integer s1=100;//[-128,127]之内的数，任然当作基本数据类型处理
 		Integer s2=100;
 		System.out.println(s1==s2);
 		System.out.println(s1.equals(s2));
