@@ -4,6 +4,12 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * ≤‚ ‘try°£°£°£catch
+ * @author savrina
+ *
+ */
+
 public class TestException2 {
 	public static void main(String[] args) {
 		// FileReader reader=null;
