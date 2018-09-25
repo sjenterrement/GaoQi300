@@ -33,7 +33,7 @@ class E extends A {
 }
 
 class F extends A{
-	public void method() throws IOException,ParsePosition{}
+//	public void method() throws IOException,ParsePosition{}
 }
 
 
