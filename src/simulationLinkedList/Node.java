@@ -6,9 +6,9 @@ package simulationLinkedList;
  *
  */
 public class Node {
-	private Object previous;
-	private Object obj;
-	private Object next;
+	 Node previous;
+     Object obj;
+	 Node next;
 	
 	
 	
@@ -16,7 +16,7 @@ public class Node {
 		
 	}
 
-	public Node(Object previous, Object obj, Object next) {
+	public Node(Node previous, Object obj, Node next) {
 		super();
 		this.previous = previous;
 		this.obj = obj;
@@ -27,7 +27,7 @@ public class Node {
 		return previous;
 	}
 
-	public void setPrevious(Object previous) {
+	public void setPrevious(Node previous) {
 		this.previous = previous;
 	}
 
@@ -43,7 +43,7 @@ public class Node {
 		return next;
 	}
 
-	public void setNext(Object next) {
+	public void setNext(Node next) {
 		this.next = next;
 	}
 	
