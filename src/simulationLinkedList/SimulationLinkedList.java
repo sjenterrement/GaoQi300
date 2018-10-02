@@ -20,10 +20,18 @@ public class SimulationLinkedList {
 	public Node iterator(int index) {
 		Node temp = null;
 		if (first != null) {
-			temp = first;
+			if (index<(size>>1)) {
+				temp = first;
 			for (int i = 0; i < index; i++) {
 				temp = temp.next;
 			}
+			}else {
+				temp=last;
+				for (int i = size-1; i < index; i--) {
+					temp=temp.previous;
+				}
+			}
+			
 		}
 		return temp;
 	}
@@ -107,8 +115,7 @@ public class SimulationLinkedList {
 		list.add("bbb");
 		list.add("ccc");
 		list.add("ddd");
-//		System.out.println(list.get(2));
-		// list.remove(2);
+		System.out.println(list.get(1));
 		System.out.println(list.size());
 	}
 }

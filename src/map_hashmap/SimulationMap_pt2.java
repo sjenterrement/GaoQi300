@@ -18,7 +18,10 @@ public class SimulationMap_pt2 {
 	public void put(Object key,Object value) {
 		MapElement e=new MapElement(key, value);
 		
-		int addr=key.hashCode()%arr.length;
+		int hash=key.hashCode();
+		hash=hash<0?-hash:hash;
+		
+		int addr=hash%arr.length;
 		if (arr[addr]==null) {
 			LinkedList list=new LinkedList();
 			arr[addr]=list;
