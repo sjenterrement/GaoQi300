@@ -2,7 +2,7 @@ package generics;
 
 import java.util.Iterator;
 
-class MyArrayList {
+class MyArrayList1 {
 	private String[] elem= {"a","b","c","d","e","f","g"};
 	private int size=elem.length;
 	
@@ -28,10 +28,10 @@ class MyArrayList {
 			return new MyIt();
 		}
 		
-		public static void main(String[] args) {
-			MyArrayList list=new MyArrayList();
-			Iterator<String>
-			
-		}
+//		public static void main(String[] args) {
+//			MyArrayList list=new MyArrayList();
+//			Iterator<String>
+//			
+//		}
 	}
 }
