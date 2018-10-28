@@ -7,28 +7,29 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * 1.ï¿½ï¿½ï¿½ï¿½Ô´ 2.Ñ¡ï¿½ï¿½ï¿½ï¿½ 3.ï¿½ï¿½ï¿½ï¿½ 4.ï¿½Í·ï¿½ï¿½ï¿½Ô´
+ * ´´½¨Á÷ Ñ¡ÔñÁ÷ ²Ù×÷ ¹Ø±Õ
  * 
  * @author SJ
  *
  */
-public class IOTest02 {
+public class IOTest03 {
 	public static void main(String[] args) {
-		// 1.ï¿½ï¿½ï¿½ï¿½Ô´
+		// 1.´´½¨Á÷
 		File src = new File("C:\\Users\\ASUS\\eclipse-workspace\\GaoQi300\\bts");
 
- 		// 2.Ñ¡ï¿½ï¿½ï¿½ï¿½
+		// 2.Ñ¡ÔñÁ÷
 		InputStream is = null;
 		try {
 			is = new FileInputStream(src);
 
-			// 3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½È¡)
-
-			int temp;
-			while ((temp = is.read()) != -1) {
-				System.out.println((char) temp);
+			// ²Ù×÷(·Ö¶Î´æÈ¡)
+			byte[] flush = new byte[3];// »º³åÈÝÆ÷
+			int len = -1;// ½ÓÊÜ³¤¶È
+			while ((len = is.read(flush)) != -1) {
+				// ×Ö½ÚÊý×é--¡·×Ö·û´®£¨½âÂë£©
+				String str = new String(flush, 0, len);
+				System.out.println(str);
 			}
-
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -36,16 +37,15 @@ public class IOTest02 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			// 4.ï¿½Í·ï¿½ï¿½ï¿½Ô´
-			try {
-				if (null != is) {
+			if (null != is) {
+				try {
 					is.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
-
 		}
+
 	}
 }
