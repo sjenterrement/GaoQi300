@@ -17,7 +17,7 @@ import java.io.OutputStream;
  *
  */
 
-public class FileUtil {
+public class FileUtils {
 	public static void main(String[] args) {
 		//文件--》文件
 		try {
