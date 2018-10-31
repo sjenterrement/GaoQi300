@@ -56,13 +56,13 @@ public class FileUtils {
 
 	/**
 	 * 对接输入输出流
-	 * 
+	 * try...with...resource
 	 * @param is
 	 * @param os
 	 */
 	public static void copy(InputStream is, OutputStream os) {
 
-		try {
+		try(is;os) {
 			// 3.操作
 			byte[] flush = new byte[1024];// 缓冲容器
 			int len = -1;// 接受长度
@@ -76,48 +76,20 @@ public class FileUtils {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} finally {
-			// 4.释放资源：分别释放，先打开的后关闭
-			close(is,os);
-		}
-
+		} 
 	}
 
-	/**
-	 * 释放资源1
-	 * 
-	 * @param is
-	 * @param os
-	 */
-	public static void close(InputStream is, OutputStream os) {
-		try {
-			if (null != os) {
-				os.close();
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		try {
-			if (null != is) {
-				is.close();
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void close(Closeable... ios) {
-		for (Closeable is : ios) {
-			try {
-				if (null != is) {
-					is.close();
-				}
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-
-	}
+//	public static void close(Closeable... ios) {
+//		for (Closeable is : ios) {
+//			try {
+//				if (null != is) {
+//					is.close();
+//				}
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//
+//	}
 
 }
