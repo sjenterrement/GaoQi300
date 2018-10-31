@@ -1,5 +1,7 @@
 package io;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -17,9 +19,33 @@ import java.io.OutputStream;
 
 public class FileUtil {
 	public static void main(String[] args) {
+		//文件--》文件
 		try {
 			InputStream is = new FileInputStream("bts");
 			OutputStream os = new FileOutputStream("cc-bts.txt");
+			copy(is,os);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//文件--》字节数组
+		byte[] datas=null;
+		try {
+			InputStream is = new FileInputStream("bts.jpg");
+			ByteArrayOutputStream os = new ByteArrayOutputStream();
+			copy(is,os);
+		    datas=os.toByteArray();
+			System.out.println(datas.length);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//字节数组--》文件
+		try {
+			InputStream is = new ByteArrayInputStream(datas);
+			OutputStream os = new FileOutputStream("cc-bts.jpg");
 			copy(is,os);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
