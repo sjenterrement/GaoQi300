@@ -78,21 +78,7 @@ public class FileUtils {
 			e.printStackTrace();
 		} finally {
 			// 4.释放资源：分别释放，先打开的后关闭
-			try {
-				if (null != os) {
-					os.close();
-				}
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-
-			try {
-				if (null != is) {
-					is.close();
-				}
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			close(is,os);
 		}
 
 	}
