@@ -1,4 +1,4 @@
-package gof23.simpleFactory;
+package gof23.factory.simpleFactory;
 
 public class Audi implements Car{
 

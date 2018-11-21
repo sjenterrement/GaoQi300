@@ -1,4 +1,4 @@
-package gof23.simpleFactory;
+package gof23.factory.simpleFactory;
 /**
  * 简单工厂模式下
  * @author SJ

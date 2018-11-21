@@ -1,4 +1,4 @@
-package gof23.factorymethod;
+package gof23.factory.factorymethod;
 
 public class BydFactory implements CarFactory{
 
