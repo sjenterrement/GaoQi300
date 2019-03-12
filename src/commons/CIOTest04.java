@@ -15,7 +15,7 @@ public class CIOTest04 {
 		//写出文件
 		FileUtils.write(new File("btsn.txt"),"bts\r\n","GBK");
 		FileUtils.writeStringToFile(new File("btsn.txt"), "jjj\r\n","GBK",true);
-		FileUtils.writeByteArrayToFile(new File("btsn.txt"), "hh\r\n".getBytes("GBK"),"true");
+		//FileUtils.writeByteArrayToFile(new File("btsn.txt"), "hh\r\n".getBytes("GBK"),"true");
 		
 		//写出列表
 		List<String> datas=new ArrayList<String>();
@@ -23,6 +23,6 @@ public class CIOTest04 {
 		datas.add("看看");
 		datas.add("方法");
 		
-		FileUtils.writeLines("btsn.txt", datas,"--------",true);
+	//	FileUtils.writeLines("btsn.txt", datas,"--------",true);
 	}
 }
