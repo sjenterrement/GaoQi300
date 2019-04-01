@@ -39,8 +39,8 @@ public class CDownloader implements Callable<Boolean>{
 		ExecutorService ser=Executors.newFixedThreadPool(3);
 		//提交执行
 		Future<Boolean> result1=ser.submit(cd1);
-		Future<Boolean> result2=ser.submit(cd1);
-		Future<Boolean> result3=ser.submit(cd1);
+		Future<Boolean> result2=ser.submit(cd2);
+		Future<Boolean> result3=ser.submit(cd3);
 		//关闭服务
 		boolean r1=result1.get();
 		boolean r2=result2.get();
