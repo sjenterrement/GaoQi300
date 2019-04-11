@@ -1,6 +1,9 @@
 package thread;
 /**
- * 
+ * 其他方法
+ * isAlive
+ * currentThread():当前线程
+ * getName()：代理名称
  * @author SJ
  *
  */
